@@ -25,3 +25,7 @@ Route::group(['prefix' => 'backend'], function() {
     Route::get('/category/create', 'Admin\CategoryController@create');
     Route::get('/category/edit', 'Admin\CategoryController@edit');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
