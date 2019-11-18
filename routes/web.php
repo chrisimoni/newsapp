@@ -19,7 +19,7 @@ Route::get('/', 'HomePageController@index');
 Route::get('/listing', 'ListingPageController@index');
 Route::get('/details', 'DetailsPageController@index');
 
-Route::group(['prefix' => 'backend'], function() {
+Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function() {
     Route::get('/', 'Admin\DashboardController@index');
     Route::get('/category', 'Admin\CategoryController@index');
     Route::get('/category/create', 'Admin\CategoryController@create');
